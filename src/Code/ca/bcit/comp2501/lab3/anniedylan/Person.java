@@ -24,12 +24,12 @@ public class Person
 
     /**
      *
-     * @param firstName
-     * @param lastName
-     * @param birthYear
-     * @param married
-     * @param weightInPounds
-     * @param highestEducationLevel
+     * @param firstName             the first name of the person
+     * @param lastName              the last name of the person
+     * @param birthYear             the year the person was born
+     * @param married               the marriage status of the person either yes, no, or divorced
+     * @param weightInPounds        the weight of the person in pounds
+     * @param highestEducationLevel the highest education of the person, either high school, undergraduate or graduate
      */
     public Person(final String firstName,
                   final String lastName,
@@ -48,11 +48,11 @@ public class Person
 
     /**
      *
-     * @param firstName
-     * @param lastName
-     * @param married
-     * @param weightInPounds
-     * @param highestEducationLevel
+     * @param firstName             the first name of the person
+     * @param lastName              the last name of the person
+     * @param married               the marriage status of the person either yes, no, or divorced
+     * @param weightInPounds        the weight of the person in pounds
+     * @param highestEducationLevel the highest education of the person, either high school, undergraduate or graduate
      */
     public Person(final String firstName,
                   final String lastName,
@@ -71,9 +71,9 @@ public class Person
 
     /**
      *
-     * @param firstName
-     * @param lastName
-     * @param weightInPounds
+     * @param firstName      the first name of the person
+     * @param lastName       the last name of the person
+     * @param weightInPounds the weight of the person in pounds
      */
     public Person(final String firstName,
                   final String lastName,
@@ -90,14 +90,14 @@ public class Person
 
     /**
      *
-     * @param educationLevelToVerify
-     * @return
+     * @param educationLevelToVerify the education level
+     * @return true if the education level is either
      */
     private boolean isValidEducationLevel(String educationLevelToVerify)
     {
-        if(     !Objects.equals(educationLevelToVerify, "yes")      ||
-                !Objects.equals(educationLevelToVerify, "no")       ||
-                !Objects.equals(educationLevelToVerify, "divorced"))
+        if(     !Objects.equals(educationLevelToVerify, "high school")    ||
+                !Objects.equals(educationLevelToVerify, "undergraduate")  ||
+                !Objects.equals(educationLevelToVerify, "graduate"))
         {
             return true;
         }
@@ -114,9 +114,9 @@ public class Person
      */
     private boolean isValidMarriageStatus(String marriageStatusToVerify)
     {
-        if(     Objects.equals(marriageStatusToVerify, "high school")    ||
-                Objects.equals(marriageStatusToVerify, "undergraduate")  ||
-                Objects.equals(marriageStatusToVerify, "graduate"))
+        if(     Objects.equals(marriageStatusToVerify, "yes")  ||
+                Objects.equals(marriageStatusToVerify, "no")   ||
+                Objects.equals(marriageStatusToVerify, "divorced"))
         {
             return true;
         }
