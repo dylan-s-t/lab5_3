@@ -18,7 +18,9 @@ public class Person
     private double       weightInPounds;
     private String       highestEducationLevel;
 
-    public static final int CURRENT_YEAR = Year.now().getValue();
+    // define constants
+    public static final int    CURRENT_YEAR = Year.now().getValue();
+    public static final double LB_TO_KG     = 0.45359237;
 
     /**
      *
@@ -129,7 +131,13 @@ public class Person
      */
     public void printDetails()
     {
-
+        System.out.printf("%s %s (%s) was born in %d, weighs %.1f pounds, and has a(n) %s degree!\n",
+                this.getFirstName(),
+                this.getLastName(),
+                this.getMarried(),
+                this.getBirthYear(),
+                this.getWeightInPounds(),
+                this.getHighestEducationLevel());
     }
 
     /**
@@ -138,19 +146,77 @@ public class Person
      */
     public void printDetails(boolean kilograms)
     {
+        double weightInKilograms;
+        weightInKilograms = this.getWeightInPounds() * LB_TO_KG;
 
+        System.out.printf("%s %s (%s) was born in %d, weighs %.1f kilograms, and has a(n) %s degree!\n",
+                this.getFirstName(),
+                this.getLastName(),
+                this.getMarried(),
+                this.getBirthYear(),
+                weightInKilograms,
+                this.getHighestEducationLevel());
     }
 
     /**
-     * 
+     *
      * @param kilograms
      * @param uppercase
      */
-    public void printDetails(boolean kilograms, boolean uppercase)
+    public void printDetails(boolean kilograms,
+                             boolean uppercase)
     {
+        double weightInKilograms;
+        weightInKilograms = this.getWeightInPounds() * LB_TO_KG;
 
+        System.out.printf("%s %s (%s) was born in %d, weighs %.1f kilograms, and has a(n) %s degree!\n",
+                this.getFirstName().toUpperCase(),
+                this.getLastName().toUpperCase(),
+                this.getMarried(),
+                this.getBirthYear(),
+                weightInKilograms,
+                this.getHighestEducationLevel());
     }
 
+    public int getBirthYear()
+    {
+        return birthYear;
+    }
 
+    public String getFirstName()
+    {
+        return firstName;
+    }
 
+    public String getHighestEducationLevel()
+    {
+        return highestEducationLevel;
+    }
+
+    public String getLastName()
+    {
+        return lastName;
+    }
+
+    public String getMarried()
+    {
+        return married;
+    }
+
+    public double getWeightInPounds()
+    {
+        return weightInPounds;
+    }
+
+    public static void main(final String[] args)
+    {
+        Person p1;
+        Person p2;
+        Person p3;
+
+        p1 = new Person("dylan", "tree", 124.5);
+        p1.printDetails();
+        p1.printDetails(true);
+        p1.printDetails(true, true);
+    }
 }
