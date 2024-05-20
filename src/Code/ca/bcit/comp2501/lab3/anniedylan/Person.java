@@ -124,6 +124,33 @@ public class Person
         }
     }
 
+    /**
+     *
+     */
+    public void printDetails()
+    {
+
+    }
+
+    /**
+     *
+     * @param kilograms
+     */
+    public void printDetails(boolean kilograms)
+    {
+
+    }
+
+    /**
+     * 
+     * @param kilograms
+     * @param uppercase
+     */
+    public void printDetails(boolean kilograms, boolean uppercase)
+    {
+
+    }
+
 
 
 }
