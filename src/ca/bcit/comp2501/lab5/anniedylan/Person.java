@@ -1,4 +1,4 @@
-
+package ca.bcit.comp2501.lab5.anniedylan;
 
 /**
  * This class models a person.
