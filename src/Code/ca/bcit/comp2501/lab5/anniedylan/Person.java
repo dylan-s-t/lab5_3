@@ -16,7 +16,8 @@ public class Person
 
     private double weightLbs;
 
-    public static final int CURRENT_YEAR = 2024;
+    public static final int    CURRENT_YEAR = 2024;
+    public static final double POUNDS_TO_KILOGRAMS = 0.4545;
 
     /**
      *
@@ -51,10 +52,10 @@ public class Person
      * @param educationLevel    person's highest level of education(high school, undergraduate, or graduate)
      */
     public Person(final String firstName,
-          final String lastName,
-          final String marriageStatus,
-          final double weightLbs,
-          final String educationLevel)
+                  final String lastName,
+                  final String marriageStatus,
+                  final double weightLbs,
+                  final String educationLevel)
     {
         this.firstName      = firstName;
         this.lastName       = lastName;
@@ -218,17 +219,17 @@ public class Person
     }
 
     /**
-     * converts weight in pounds to kilograms
+     * Converts weight in pounds to weight in kilograms.
      * @param weightLbs weight in pounds
      * @return weight in kilograms
      */
     public double weightKG(final double weightLbs)
     {
-        return weightLbs * 0.4545;
+        return weightLbs * POUNDS_TO_KILOGRAMS;
     }
 
     /**
-     * prints out all information in specified format
+     * Prints out all information in specified format when unit is kilograms.
      * @param kilograms if true, converts weight given in pounds to kilograms
      */
     public void printDetails(final boolean kilograms)
@@ -246,7 +247,7 @@ public class Person
     }
 
     /**
-     * prints out all information in specified format
+     * Prints out all information in specified format when unit is kilograms and uppercase specified.
      * @param kilograms if true, converts weight given in pounds to kilograms and prints in uppercase
      * @param uppercase if true, prints in uppercase
      */
@@ -285,7 +286,6 @@ public class Person
                         this.getEducationLevel());
             }
         }
-
     }
 
     public static void main(final String[] args)
@@ -295,7 +295,6 @@ public class Person
         Person p3;
 
         p1 = new Person("Tiger", "Woods", 1975, "divorced", 200, "undergraduate");
-
         p1.printDetails();
         p1.printDetails(true);
         p1.printDetails(true, true);
@@ -304,7 +303,6 @@ public class Person
         p1.printDetails(false, false);
 
         p2 = new Person("Jason", "Wilder", 2000, "no", 180, "graduate");
-
         p2.printDetails();
         p2.printDetails(true);
         p2.printDetails(true, true);
